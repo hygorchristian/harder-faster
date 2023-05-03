@@ -21,21 +21,39 @@ export const Container = styled.div`
   max-width: 100vw;
   overflow: hidden;
   display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
   background-color: #132424;
+  gap: 24px;
 `;
 
 export const Grid = styled.div`
-  width: 100vh;
-	height: 100vh;
+  width: 80vw;
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(8, 1fr);
-	gap: calc(100vh * 0.015);
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(4, 110px);
+	gap: calc(100vh * 0.020);
 	padding: 16px;
 `;
+
+export const Control = styled.div`
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  button{
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    font-family: monospace;
+  }
+`;
+
 
 export const Pad = styled.button`
   border: none;
@@ -91,6 +109,10 @@ export const Pad = styled.button`
 
   &.hasData:active:after {
     background: transparent;
+  }  
+
+  &.active:after {
+    background: #cce83d;
   }
 
   @keyframes glowing {
